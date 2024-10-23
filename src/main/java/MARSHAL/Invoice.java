@@ -9,8 +9,6 @@ import jakarta.xml.bind.annotation.XmlType;
     "taxesOutputs",
     "invoiceTotals",
     "items",
-    "paymentDetails",
-    "additionalData"
 })
 public class Invoice {
     private InvoiceHeader invoiceHeader;
@@ -18,8 +16,6 @@ public class Invoice {
     private TaxesOutputs taxesOutputs;
     private InvoiceTotals invoiceTotals;
     private Items items;
-    private PaymentDetails paymentDetails;
-    private AdditionalData additionalData;
 
     @XmlElement(name = "InvoiceHeader")
     public InvoiceHeader getInvoiceHeader() {
@@ -66,21 +62,4 @@ public class Invoice {
         this.items = items;
     }
 
-    @XmlElement(name = "PaymentDetails")
-    public PaymentDetails getPaymentDetails() {
-        return paymentDetails;
-    }
-
-    public void setPaymentDetails(PaymentDetails paymentDetails) {
-        this.paymentDetails = paymentDetails;
-    }
-
-    @XmlElement(name = "AdditionalData")
-    public AdditionalData getAdditionalData() {
-        return additionalData;
-    }
-
-    public void setAdditionalData(AdditionalData additionalData) {
-        this.additionalData = additionalData;
-    }
 }

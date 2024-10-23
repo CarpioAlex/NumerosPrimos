@@ -1,18 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.FACE.DAM.TJDDGA</groupId>
     <artifactId>FaceSalmauibers</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>22</maven.compiler.source> <!-- Actualizado a JDK 22 -->
+        <maven.compiler.target>22</maven.compiler.target>
+        <path.to.javafx>C:\Program Files\javafx-sdk-23.0.1\lib</path.to.javafx> <!-- Asegúrate que esta es la ruta correcta -->
         <exec.mainClass>com.face.dam.tjddga.facesalmauibers.FaceSalmauibers</exec.mainClass>
     </properties>
     
-     <dependencies>
+    <dependencies>
         <!-- JAXB API -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
@@ -26,7 +29,43 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>3.0.1</version>
         </dependency>
+
+        <!-- JavaFX Controls -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>23.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>23.0.1</version>
+            <classifier>win</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>23.0.1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
-    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version> <!-- Cambiar si necesitas otra versión -->
+                <configuration>
+                    <mainClass>com.face.dam.tjddga.facesalmauibers.FaceSalmauibers</mainClass>
+                    <options>
+                        <option>--module-path</option>
+                        <option>${path.to.javafx}</option>
+                        <option>--add-modules</option>
+                        <option>javafx.controls,javafx.fxml</option>
+                    </options>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

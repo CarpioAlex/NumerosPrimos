@@ -1,6 +1,7 @@
 package com.face.dam.tjddga.facesalmauibers;
 
 import formulario.PruebaFormulario;
+import formulario.*;
 
 public class test {
 
@@ -8,5 +9,6 @@ public class test {
         
         PruebaFormulario formulario = new PruebaFormulario(null, true);
         formulario.setVisible(true);
+        NewFXMain.main(args);
     }
 }

@@ -838,10 +838,7 @@ private void procesarFormulario() {
             invoiceIssueData.setInvoiceCurrencyCode("EUR");
             invoiceIssueData.setTaxCurrencyCode("EUR");
             invoiceIssueData.setLanguageName("es");
-            
-            invoiceIssueData.setInvoiceDescription("Esto es una factura de prueba, uwu.");
-            
-            
+                        
             invoice.setInvoiceIssueData(invoiceIssueData);
 
             // TaxesOutputs
@@ -882,8 +879,6 @@ private void procesarFormulario() {
 
             // Primer ítem
             InvoiceLine invoiceLine1 = new InvoiceLine();
-            invoiceLine1.setIssuerContractReference("123456789");
-            invoiceLine1.setFileReference("NUMREFxx");
             invoiceLine1.setItemDescription("Ensaimada gigantesca");
             invoiceLine1.setQuantity(1);
             invoiceLine1.setUnitPriceWithoutTax(2000.00); // Precio unitario sin impuestos
@@ -904,8 +899,7 @@ private void procesarFormulario() {
 
             // Segundo ítem
             InvoiceLine invoiceLine2 = new InvoiceLine();
-            invoiceLine2.setIssuerContractReference("987654321");
-            invoiceLine2.setFileReference("NUMREFyy");
+
             invoiceLine2.setItemDescription("Chocolate con churros");
             invoiceLine2.setQuantity(1);
             invoiceLine2.setUnitPriceWithoutTax(500.00); // Precio unitario sin impuestos
@@ -922,40 +916,7 @@ private void procesarFormulario() {
             items.getInvoiceLine().add(invoiceLine2);
 
             // Asignar items a la factura
-            invoice.setItems(items);
-
-
-            // PaymentDetails
-            PaymentDetails paymentDetails = new PaymentDetails();
-
-            // Crear objeto Installment
-            Installment installment = new Installment();
-            installment.setInstallmentDueDate("2022-06-05");
-            installment.setInstallmentAmount("2420.00"); // Asegúrate de que sea un String con dos decimales
-            installment.setPaymentMeans("04"); // Usa el código de pago como String
-
-            // Crear objeto AccountToBeCredited
-            AccountToBeCredited accountToBeCredited = new AccountToBeCredited();
-            accountToBeCredited.setIban("ES1000491500022910080785");
-            installment.setAccountToBeCredited(accountToBeCredited);
-
-            // Añadir el installment al PaymentDetails
-            if (paymentDetails.getInstallments() == null) {
-                paymentDetails.setInstallments(new ArrayList<>());
-            }
-            paymentDetails.getInstallments().add(installment);
-
-            // Inicializa la lista de installments antes de añadir
-            if (paymentDetails.getInstallments() == null) {
-                paymentDetails.setInstallments(new ArrayList<>());
-            }
-            paymentDetails.getInstallments().add(installment);
-            invoice.setPaymentDetails(paymentDetails);
-
-            // AdditionalData
-            AdditionalData additionalData = new AdditionalData();
-            additionalData.setInvoiceAdditionalInformation("Nerf BBKarin");
-            invoice.setAdditionalData(additionalData);
+            invoice.setItems(items);          
 
             // Añadir la factura a la lista de Invoices
             if (invoices.getInvoice() == null) {

@@ -76,7 +76,6 @@
                 <InvoiceCurrencyCode>EUR</InvoiceCurrencyCode>
                 <TaxCurrencyCode>EUR</TaxCurrencyCode>
                 <LanguageName>es</LanguageName>
-                <InvoiceDescription>Esto es una factura de prueba, uwu.</InvoiceDescription>
             </InvoiceIssueData>
             <TaxesOutputs>
                 <Tax>
@@ -101,8 +100,6 @@
             </InvoiceTotals>
             <Items>
                 <InvoiceLine>
-                    <IssuerContractReference>123456789</IssuerContractReference>
-                    <FileReference>NUMREFxx</FileReference>
                     <ItemDescription>Ensaimada gigantesca</ItemDescription>
                     <Quantity>1</Quantity>
                     <UnitPriceWithoutTax>2000.0</UnitPriceWithoutTax>
@@ -126,8 +123,6 @@
                     </LineItemPeriod>
                 </InvoiceLine>
                 <InvoiceLine>
-                    <IssuerContractReference>987654321</IssuerContractReference>
-                    <FileReference>NUMREFyy</FileReference>
                     <ItemDescription>Chocolate con churros</ItemDescription>
                     <Quantity>1</Quantity>
                     <UnitPriceWithoutTax>500.0</UnitPriceWithoutTax>
@@ -151,27 +146,6 @@
                     </LineItemPeriod>
                 </InvoiceLine>
             </Items>
-            <PaymentDetails>
-                <Installment>
-                    <InstallmentDueDate>2022-06-05</InstallmentDueDate>
-                    <InstallmentAmount>2420.00</InstallmentAmount>
-                    <PaymentMeans>04</PaymentMeans>
-                    <AccountToBeCredited>
-                        <IBAN>ES1000491500022910080785</IBAN>
-                    </AccountToBeCredited>
-                </Installment>
-                <Installment>
-                    <InstallmentDueDate>2022-06-05</InstallmentDueDate>
-                    <InstallmentAmount>2420.00</InstallmentAmount>
-                    <PaymentMeans>04</PaymentMeans>
-                    <AccountToBeCredited>
-                        <IBAN>ES1000491500022910080785</IBAN>
-                    </AccountToBeCredited>
-                </Installment>
-            </PaymentDetails>
-            <AdditionalData>
-                <InvoiceAdditionalInformation>Nerf BBKarin</InvoiceAdditionalInformation>
-            </AdditionalData>
         </Invoice>
     </Invoices>
 </ns2:Facturae>
