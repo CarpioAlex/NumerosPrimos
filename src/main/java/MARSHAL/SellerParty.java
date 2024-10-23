@@ -2,7 +2,6 @@ package MARSHAL;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlElements;
 import jakarta.xml.bind.annotation.XmlType;
-import formulario.PruebaFormulario;
 
 /**
  *
